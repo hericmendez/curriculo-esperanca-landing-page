@@ -106,7 +106,7 @@ const Home = () => {
           ].map(({ emoji, text }) => (
             <li
               key={text}
-              className="bg-pink-50 dark:bg-gray-800 rounded-xl p-6 font-semibold shadow-sm"
+              className="bg-pink-50 dark:bg-gray-800 text-black dark:text-white rounded-xl p-6 font-semibold shadow-sm"
             >
               <span className="text-3xl mb-2 block">{emoji}</span>
               {text}
@@ -170,7 +170,6 @@ const Home = () => {
       </section>
       {/* Panel of Successful Mentorships */}
       <section className="max-w-5xl mx-auto px-6 my-16">
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
           {stats.map(({ label, value }) => (
             <div
@@ -186,7 +185,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-          
+
         <div className="text-center mt-16">
           <h2 className="text-4xl font-bold text-pink-500 dark:text-purple-400 mb-4">
             Pronto pra ser o próximo?
