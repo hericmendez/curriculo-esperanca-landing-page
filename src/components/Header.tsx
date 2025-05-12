@@ -10,17 +10,18 @@ const Header: FC = () => {
 
   return (
     <header className="bg-white dark:bg-slate-800 shadow-md sticky top-0 z-50 min-h-[60px] flex flex-row justify-center  items-center">
-
       <button
-            onClick={toggleMenu}
-            className="md:hidden text-pink-500 dark:text-yellow-400 text-2xl"
-          >
-            {isOpen ? <HiX /> : <HiMenu />}
-          </button>
+        onClick={toggleMenu}
+        className="md:hidden text-pink-500 dark:text-yellow-400 text-2xl"
+      >
+        {isOpen ? <HiX /> : <HiMenu />}
+      </button>
       {/* Links de navegação */}
       <nav
         className={`md:flex justify-center gap-6 font-semibold text-pink-500 dark:text-purple-500
-          ${isOpen ? "block px-6 pb-4" : "hidden"} md:pb-0 md:px-0 gap-10 text-xl`}
+          ${
+            isOpen ? "block px-6 pb-4" : "hidden"
+          } md:pb-0 md:px-0 gap-10 text-xl`}
       >
         <Link
           to="/"
@@ -48,7 +49,7 @@ const Header: FC = () => {
           className="block py-2 hover:text-pink-500 dark:dark:hover:text-purple-300"
           onClick={() => setIsOpen(false)}
         >
-          Mentorados
+          Banco de talentos
         </Link>
         <Link
           to="/blog"
@@ -58,7 +59,7 @@ const Header: FC = () => {
           Novidades
         </Link>
       </nav>
-      <ThemeToggle/>
+      <ThemeToggle />
     </header>
   );
 };
