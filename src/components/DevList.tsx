@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import DevCard from './DevCard';
-
+import React, { useEffect, useRef, useState } from "react";
+import DevCard from "./DevCard";
+import axios from "axios";
+import { ClipLoader } from "react-spinners"; //
 type DevData = {
   name: string;
   area: string;
@@ -17,11 +18,20 @@ const DevList: React.FC = () => {
   const [areas, setAreas] = useState<string[]>([]);
   const [stacks, setStacks] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const ITEMS_PER_PAGE = 12;
+
   const [page, setPage] = useState(1);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [selectedArea, setSelectedArea] = useState<string>("");
   const [selectedStack, setSelectedStack] = useState<string>("");
+
+  const ITEMS_PER_PAGE = 12;
+  const paginatedDevs = filteredDevs.slice(0, page * ITEMS_PER_PAGE);
+  const observer = useRef<IntersectionObserver | null>(null);
+  const loaderRef = useRef<HTMLDivElement | null>(null);
+
   function isValidUrl(str: string): boolean {
     try {
       const url = new URL(str.startsWith("http") ? str : "https://" + str);
@@ -39,19 +49,43 @@ const DevList: React.FC = () => {
       .map((s) => s.trim())
       .filter((s) => s.length > 0);
   }
+  useEffect(() => {
+    if (loading) return;
+
+    if (observer.current) observer.current.disconnect();
+
+    observer.current = new IntersectionObserver((entries) => {
+      if (
+        entries[0].isIntersecting &&
+        paginatedDevs.length < filteredDevs.length
+      ) {
+        setPage((prev) => prev + 1);
+      }
+    });
+
+    if (loaderRef.current) {
+      observer.current.observe(loaderRef.current);
+    }
+
+    return () => observer.current?.disconnect();
+  }, [loading, paginatedDevs.length, filteredDevs.length]);
 
   useEffect(() => {
-    fetch(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNSM5yQk7RmbpMH6YGajp4iYmHaRh6nV17ugFYuobtb3y1ZPLZjkouP7BGGpe37K-W33jLd3wkMQme/pub?gid=1211938411&single=true&output=csv"
-    )
-      .then((res) => res.text())
-      .then((csv) => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await axios.get(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNSM5yQk7RmbpMH6YGajp4iYmHaRh6nV17ugFYuobtb3y1ZPLZjkouP7BGGpe37K-W33jLd3wkMQme/pub?gid=1211938411&single=true&output=csv"
+        );
+
+        const csv = response.data;
         const [headerLine, ...lines] = csv.trim().split("\n");
         const headers = headerLine.split(",");
 
         const parsed: DevData[] = lines.map((line) => {
           const values = line.split(",");
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const row: any = {};
 
           headers.forEach((header, i) => {
@@ -74,7 +108,6 @@ const DevList: React.FC = () => {
         });
 
         setDevs(parsed);
-        console.log("parsed ==> ", parsed.length);
         setFilteredDevs(parsed);
 
         const uniqueAreas = Array.from(
@@ -86,7 +119,15 @@ const DevList: React.FC = () => {
 
         setAreas(uniqueAreas);
         setStacks(allStacks);
-      });
+      } catch (err) {
+        console.error("Erro ao buscar dados:", err);
+        setError("Erro ao carregar desenvolvedores.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -118,6 +159,7 @@ const DevList: React.FC = () => {
       );
     }
     setFilteredDevs(filtered);
+    setPage(1);
   }, [selectedArea, selectedStack, devs]);
 
   return (
@@ -187,8 +229,19 @@ const DevList: React.FC = () => {
           ))}
         </select>
       </div>
+      {error && (
+        <div className="bg-red-100 text-red-800 px-4 py-3 rounded mb-6 max-w-xl">
+          <strong className="font-bold">Erro:</strong> {error}
+        </div>
+      )}
+      {loading && devs.length === 0 && (
+        <div className="flex justify-center items-center h-64">
+          <ClipLoader size={50} color="#ec4899" />
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 mx-auto">
-        {filteredDevs.map((dev, index) => (
+        {paginatedDevs.map((dev, index) => (
           <DevCard
             key={index}
             name={dev.name}
@@ -199,6 +252,14 @@ const DevList: React.FC = () => {
             portfolio={dev.portfolio}
           />
         ))}
+        <div
+          ref={loaderRef}
+          className="h-12 flex justify-center items-center mt-4"
+        >
+          {paginatedDevs.length < filteredDevs.length && (
+            <ClipLoader size={30} color="#ec4899" />
+          )}
+        </div>
       </div>
     </div>
   );
