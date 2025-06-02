@@ -6,19 +6,19 @@ import Sobre from '@/pages/Sobre';
 import Contato from '@/pages/Contato';
 import AppLayout from '@/layout/AppLayout';
 import Servicos from '@/pages/Servicos';
-import Mentorados from '@/pages/Mentorados';
-import Blog from '@/pages/Blog';
+import BancoDeTalentos from "@/pages/BancoDeTalentos";
+import Blog from "@/pages/Blog";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         {/* Essa rota será renderizada dentro do <Outlet /> */}
-        <Route index element={<Home />} /> 
+        <Route index element={<Home />} />
         <Route path="sobre" element={<Sobre />} />
         <Route path="contato" element={<Contato />} />
         <Route path="servicos" element={<Servicos />} />
-        <Route path="mentorados" element={<Mentorados />} />
+        <Route path="talentos" element={<BancoDeTalentos />} />
         <Route path="blog" element={<Blog />} />
       </Route>
     </Routes>

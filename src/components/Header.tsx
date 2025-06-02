@@ -18,45 +18,45 @@ const Header: FC = () => {
       </button>
       {/* Links de navegação */}
       <nav
-        className={`md:flex justify-center gap-6 font-semibold text-pink-500 dark:text-purple-500
+        className={`md:flex justify-center gap-6 font-semibold text-pink-500
           ${
             isOpen ? "block px-6 pb-4" : "hidden"
           } md:pb-0 md:px-0 gap-10 text-xl`}
       >
         <Link
           to="/"
-          className="block py-2 hover:text-pink-500 dark:hover:text-purple-300"
+          className="block py-2 hover:text-pink-300"
           onClick={() => setIsOpen(false)}
         >
           Início
         </Link>
-        <Link
+        {/*        <Link
           to="/sobre"
-          className="block py-2 hover:text-pink-500 dark:hover:text-purple-300"
+          className="block py-2 hover:text-pink-300 "
           onClick={() => setIsOpen(false)}
         >
           Sobre
-        </Link>
+        </Link> */}
         <Link
           to="/servicos"
-          className="block py-2 hover:text-pink-500 dark:hover:text-purple-300"
+          className="block py-2 hover:text-pink-300 "
           onClick={() => setIsOpen(false)}
         >
           Serviços
         </Link>
         <Link
-          to="/mentorados"
-          className="block py-2 hover:text-pink-500 dark:dark:hover:text-purple-300"
+          to="/talentos"
+          className="block py-2 hover:text-pink-300 dark:"
           onClick={() => setIsOpen(false)}
         >
           Banco de talentos
         </Link>
         <Link
           to="/blog"
-          className="block py-2 hover:text-pink-500 dark:hover:text-purple-300"
+          className="block py-2 hover:text-pink-300 "
           onClick={() => setIsOpen(false)}
         >
-          Novidades
+          Blog
         </Link>
       </nav>
       <ThemeToggle />

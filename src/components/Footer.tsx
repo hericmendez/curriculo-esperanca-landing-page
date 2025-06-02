@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-evenly items-center gap-8">
         {/* Mensagem */}
         <div className="text-center md:text-left">
-          <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">
+          <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400s mb-2">
             Vamos transformar sua carreira juntos?
           </h3>
           <p className="text-sm">
@@ -15,18 +15,31 @@ const Footer = () => {
         {/* Contatos */}
         <div className="text-center">
           <p className="mb-1">
-            📞 <a href="https://wa.me/5511976013656" target="_blank" rel="noreferrer" className="underline hover:text-pink-500 dark:hover:text-purple-400">WhatsApp: (11) 97601-3656</a>
+            📞{" "}
+            <a
+              href="https://wa.me/5511976013656"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-pink-500 dark:hover:text-purple-400"
+            >
+              WhatsApp: (11) 97601-3656
+            </a>
           </p>
           <p className="mb-1">
-            📧 <a href="mailto:geovanna@curriculoesperanca.com" className="underline hover:text-pink-500 dark:hover:text-purple-400">geovanna@curriculoesperanca.com</a>
+            📧{" "}
+            <a
+              href="mailto:geovanna@curriculoesperanca.com"
+              className="underline hover:text-pink-500 dark:hover:text-purple-400"
+            >
+              geovanna@curriculoesperanca.com
+            </a>
           </p>
         </div>
-
-
       </div>
 
       <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-        &copy; {new Date().getFullYear()} Currículo Esperança · Todos os direitos reservados
+        &copy; {new Date().getFullYear()} Currículo Esperança · Todos os
+        direitos reservados
       </div>
     </footer>
   );

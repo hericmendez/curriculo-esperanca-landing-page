@@ -6,7 +6,8 @@ const Sobre = () => {
           Sobre Mim
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-          Minha missão é transformar carreiras com estratégias personalizadas, empatia e resultados reais.
+          Minha missão é transformar carreiras com estratégias personalizadas,
+          empatia e resultados reais.
         </p>
       </header>
 
@@ -16,19 +17,23 @@ const Sobre = () => {
         </h2>
         <div className="space-y-6 text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
           <p>
-            O <strong>Currículo Esperança</strong> nasceu da necessidade de tornar o mercado de trabalho mais acessível. 
-            Vi muitos profissionais talentosos sendo ignorados pelos recrutadores simplesmente porque não sabiam 
-            como se apresentar de forma estratégica.
+            O <strong>Currículo Esperança</strong> nasceu da necessidade de
+            tornar o mercado de trabalho mais acessível. Vi muitos profissionais
+            talentosos sendo ignorados pelos recrutadores simplesmente porque
+            não sabiam como se apresentar de forma estratégica.
           </p>
           <p>
-            Meu objetivo sempre foi claro: oferecer <strong>currículos otimizados e acessíveis</strong>, ajudando 
-            pessoas a saírem da invisibilidade profissional. Desde o início do projeto, já impactei mais de 
-            <strong> 10.000 candidatos</strong>, que conseguiram entrevistas, recolocações e até mesmo promoções com 
-            um currículo bem estruturado.
+            Meu objetivo sempre foi claro: oferecer{" "}
+            <strong>currículos otimizados e acessíveis</strong>, ajudando
+            pessoas a saírem da invisibilidade profissional. Desde o início do
+            projeto, já impactei mais de
+            <strong> 10.000 candidatos</strong>, que conseguiram entrevistas,
+            recolocações e até mesmo promoções com um currículo bem estruturado.
           </p>
           <p>
-            Além disso, mantenho promoções e ofertas especiais, garantindo que mais pessoas tenham acesso a esse 
-            suporte essencial. Se você sente que seu currículo não está trazendo resultados, 
+            Além disso, mantenho promoções e ofertas especiais, garantindo que
+            mais pessoas tenham acesso a esse suporte essencial. Se você sente
+            que seu currículo não está trazendo resultados,
             <strong> podemos aumentar essa chance juntos</strong>.
           </p>
 
@@ -37,7 +42,7 @@ const Sobre = () => {
               href="https://wa.me/5511976013656"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-pink-500 text-white dark:bg-purple-500 dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
+              className="inline-block bg-pink-500 text-white dark:bg-purple-500s dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
             >
               Fale comigo no WhatsApp
             </a>
@@ -46,10 +51,14 @@ const Sobre = () => {
       </section>
 
       <section className="text-center mt-12">
-        <h2 className="text-2xl font-bold text-pink-500 dark:text-purple-400 mb-4">Vamos transformar sua história?</h2>
+        <h2 className="text-2xl font-bold text-pink-500 dark:text-purple-400s mb-4">
+          Vamos transformar sua história?
+        </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Se você sente que merece mais reconhecimento, eu posso te ajudar a conquistar isso.
-          <br />Bora conversar?
+          Se você sente que merece mais reconhecimento, eu posso te ajudar a
+          conquistar isso.
+          <br />
+          Bora conversar?
         </p>
       </section>
     </div>

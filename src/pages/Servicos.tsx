@@ -48,7 +48,8 @@ export default function Servicos() {
           Descubra Nossos Serviços
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-          Cada serviço foi pensado para te ajudar a se destacar com autenticidade e confiança no mercado de trabalho.
+          Cada serviço foi pensado para te ajudar a se destacar com
+          autenticidade e confiança no mercado de trabalho.
         </p>
       </header>
 
@@ -62,8 +63,10 @@ export default function Servicos() {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
               {servico.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{servico.desc}</p>
-            <span className="inline-block bg-pink-100 text-pink-600 dark:bg-purple-900 dark:text-purple-200 px-4 py-1 rounded-full font-medium">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              {servico.desc}
+            </p>
+            <span className="inline-block bg-pink-100 text-pink-600 dark:bg-purple-900s dark:text-purple-200 px-4 py-1 rounded-full font-medium">
               {servico.price}
             </span>
           </div>
@@ -78,7 +81,7 @@ export default function Servicos() {
           href="https://wa.me/5511976013656"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-pink-500 text-white dark:bg-purple-500 dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
+          className="inline-block bg-pink-500 text-white dark:bg-purple-500s dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
         >
           Fale comigo no WhatsApp
         </a>

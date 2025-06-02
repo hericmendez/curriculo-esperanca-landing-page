@@ -75,7 +75,7 @@ const Home = () => {
       </section>
 
       <section className="max-w-3xl mx-auto my-16 px-6 text-center">
-        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600 mb-4">
+        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600s mb-4">
           Quem Sou Eu?
         </h2>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
@@ -83,7 +83,7 @@ const Home = () => {
           ajudar profissionais a otimizar seus currículos, perfis no LinkedIn e
           se prepararem para entrevistas. Meu trabalho é te ajudar a encontrar o
           seu diferencial no mercado, para que recrutadores vejam o{" "}
-          <strong className="text-pink-500 dark:text-purple-600">
+          <strong className="text-pink-500 dark:text-purple-600s">
             seu verdadeiro valor
           </strong>
           .
@@ -91,7 +91,7 @@ const Home = () => {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 my-16">
-        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600 text-center mb-8">
+        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600s text-center mb-8">
           O Que Você Vai Conquistar?
         </h2>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
@@ -117,7 +117,7 @@ const Home = () => {
 
       {/* New Services Section */}
       <section className="max-w-5xl mx-auto px-6 my-16">
-        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600 text-center mb-8">
+        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600s text-center mb-8">
           E o que tenho a oferecer
         </h2>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -135,13 +135,13 @@ const Home = () => {
 
       {/* Testimonials Carousel */}
       <section className="max-w-3xl mx-auto px-6 my-16 text-center">
-        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600 mb-8">
+        <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-600s mb-8">
           Meus mentorados que já alcançaram o sucesso:
         </h2>
         <div className="relative">
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 dark:bg-purple-500  text-white p-2 rounded-full hover:bg-pink-600  hover:dark:bg-purple-300"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 dark:bg-purple-500s  text-white p-2 rounded-full hover:bg-pink-600  hover:dark:bg-purple-300s"
             aria-label="Previous"
           >
             ‹
@@ -161,7 +161,7 @@ const Home = () => {
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 dark:bg-purple-500  text-white p-2 rounded-full hover:bg-pink-600  hover:dark:bg-purple-300"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 dark:bg-purple-500s  text-white p-2 rounded-full hover:bg-pink-600  hover:dark:bg-purple-300s"
             aria-label="Next"
           >
             ›
@@ -176,7 +176,7 @@ const Home = () => {
               key={label}
               className="bg-pink-50 dark:bg-gray-800 rounded-xl p-6 shadow"
             >
-              <span className="text-4xl font-bold text-pink-500 dark:text-purple-400 block mb-2">
+              <span className="text-4xl font-bold text-pink-500 dark:text-purple-400s block mb-2">
                 {value}
               </span>
               <span className="font-semibold text-gray-700 dark:text-gray-200">
@@ -187,14 +187,14 @@ const Home = () => {
         </div>
 
         <div className="text-center mt-16">
-          <h2 className="text-4xl font-bold text-pink-500 dark:text-purple-400 mb-4">
+          <h2 className="text-4xl font-bold text-pink-500 dark:text-purple-400s mb-4">
             Pronto pra ser o próximo?
           </h2>
           <a
             href="https://wa.me/5511976013656"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-pink-500 text-white dark:bg-purple-500 dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
+            className="inline-block bg-pink-500 text-white dark:bg-purple-500s dark:text-white px-6 py-3 rounded-full shadow-md hover:bg-pink-600 dark:hover:bg-purple-600 transition"
           >
             Fale comigo no WhatsApp
           </a>
